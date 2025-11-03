@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleFormulario.css">
+    <title>Formulario Cliente - GoldenGym</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="img/galeria/gim.png" alt="GoldenGym" width="800" height="150">            
+            <h1>Historial del cliente</h1>
+            <p class="welcome-text">¡Bienvenido(a) a GOLDEN CENTER! Nos alegra que formes parte de nuestra comunidad fitness. Este formulario nos ayudará a conocer un poco más sobre ti. Con esta información podremos diseñar rutinas adaptadas a tus necesidades, hacer un seguimiento de tu progreso y apoyarte en cada paso de tu entrenamiento. ¡Tu meta es nuestra meta!</p>
+        </div>
+
+        <form action="procesar_formulario.php" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" required>
+                </div>
+                <div class="form-group">
+                    <label for="peso">Peso (kg):</label>
+                    <input type="number" id="peso" name="peso" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="altura">Altura (cm):</label>
+                    <input type="number" id="altura" name="altura" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="telefono">Teléfono de contacto:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono_emergencia">Teléfono de emergencia:</label>
+                    <input type="tel" id="telefono_emergencia" name="telefono_emergencia" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Ej: usuario@correo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">Dirección de residencia:</label>
+                <input type="text" id="direccion" name="direccion" required>
+            </div>
+
+            <div class="form-group">
+                <label for="objetivos">Objetivos de entrenamiento:</label>
+                <textarea id="objetivos" name="objetivos" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Días de asistencia:</label>
+                <div class="days-grid">
+                    <div class="day-item">
+                        <input type="checkbox" id="lunes" name="dias[]" value="Lunes">
+                        <label for="lunes">Lunes</label>
+                    </div>
+                    <div class="day-item">
+                        <input type="checkbox" id="martes" name="dias[]" value="Martes">
+                        <label for="martes">Martes</label>
+                    </div>
+                    <div class="day-item">
+                        <input type="checkbox" id="miercoles" name="dias[]" value="Miércoles">
+                        <label for="miercoles">Miércoles</label>
+                    </div>
+                    <div class="day-item">
+                        <input type="checkbox" id="jueves" name="dias[]" value="Jueves">
+                        <label for="jueves">Jueves</label>
+                    </div>
+                    <div class="day-item">
+                        <input type="checkbox" id="viernes" name="dias[]" value="Viernes">
+                        <label for="viernes">Viernes</label>
+                    </div>
+                    <div class="day-item">
+                        <input type="checkbox" id="sabado" name="dias[]" value="Sábado">
+                        <label for="sabado">Sábado</label>
+                    </div>
+                </div>
+                
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="horario">Horario de asistencia:</label>
+                        <input type="text" id="horario" name="horario" placeholder="Ej: 6:00 am - 8:00 am" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alimentacion">Tipo de alimentación:</label>
+                        <select id="alimentacion" name="alimentacion" required>
+                            <option value="">Seleccione</option>
+                            <option value="carnivoro">Carnívoro</option>
+                            <option value="vegetariano">Vegetariano</option>
+                            <option value="vegano">Vegano</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>¿Tiene alguna enfermedad?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="enfermedad_si" name="enfermedad" value="si" required>
+                        <label for="enfermedad_si">Sí</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="enfermedad_no" name="enfermedad" value="no" required>
+                        <label for="enfermedad_no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="cual_enfermedad">En caso afirmativo, indique cuál(es):</label>
+                <input type="text" id="cual_enfermedad" name="cual_enfermedad" placeholder="Especifique si aplica">
+            </div>
+
+            <div class="terms-container">
+                <input type="checkbox" name="terminos" id="terminos" required>
+                <label for="terminos">Acepto los términos y condiciones</label>
+            </div>
+
+            <div class="submit-container">
+                <button type="submit" id="btnregistrarse">Registrarse</button>
+            </div>
+        </form>
+
+        <div class="footer-text">
+            <p>¡Gracias por confiar en nosotros! Estamos aquí para ayudarte a alcanzar tus metas y disfrutar de un estilo de vida saludable. Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos.</p>
+        </div>
+    </div>
+    <script src="../js/scriptFormulario.js"></script>
+</body>
+</html>
